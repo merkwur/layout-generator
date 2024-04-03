@@ -1,6 +1,6 @@
 # Automated Layout Generator
 
-The automatic layout generator function it is kind of circle-packing algorihm combining with force-directed graph layout algorothm. 
+The automatic layout generator it is a kind of circle-packing algorithm combining with force-directed graph layout algorithm. 
 
 **!! The algorithm development is still in progress**
 
