@@ -12,7 +12,7 @@ const PageSize = ({getValues}) => {
     } else {
       setPageSizes({...pageSizes, y: fitted})
     }
-    getValues(value, "page-size", which)
+    getValues(fitted, "page-size", which)
   }
 
   return (
@@ -48,7 +48,7 @@ adjustment`}
         >
         </div>
         <div className='numeric-display'>
-          {`${pageSizes.x.toFixed(2)} x - ${pageSizes.y.toFixed(2)} y` }
+          {`${pageSizes.x.toFixed(2)} - ${pageSizes.y.toFixed(2)}` }
         </div>
       </div>
   </> 

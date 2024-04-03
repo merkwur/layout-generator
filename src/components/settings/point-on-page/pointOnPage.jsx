@@ -62,7 +62,6 @@ const PointOnPage = ({getValues}) => {
             && rmxp > dragState.c.xmin
             && rmyp < dragState.c.ymax
             && rmyp > dragState.c.ymin) {
-              
           const diffX = event.clientX - dragState.initialPosition.x
           const diffY = event.clientY - dragState.initialPosition.y
           const xPos = clamp(dragState.pointPos.x + diffX, 0, 90)
@@ -73,6 +72,7 @@ const PointOnPage = ({getValues}) => {
             ...dragState, 
             pointPos: {x: dragState.pointPos.x + diffX, y: dragState.pointPos.y + diffY}
           })
+          getValues({x: ((xPos / 90)-.5)*2, y: ((yPos / 110)-.5)*-2}, "on-page", undefined)
         }
       }
     }
@@ -82,15 +82,13 @@ const PointOnPage = ({getValues}) => {
     }
   
     useEffect(() => {
-      if (isDragging) {
-        
+      if (isDragging) {  
         window.addEventListener('mousemove', handleMouseMove)
         window.addEventListener('mouseup', handleMouseUp)
       } else {
         window.removeEventListener('mousemove', handleMouseMove)
         window.removeEventListener('mouseup', handleMouseUp)
       }
-  
       return () => {
         window.removeEventListener('mousemove', handleMouseMove)
         window.removeEventListener('mouseup', handleMouseUp)
@@ -119,7 +117,6 @@ position`}
             style={{left: "50%", top: "50%"}}
             onMouseDown={handleMouseDown}
           >
-
           </div>
         </div>
       </div>

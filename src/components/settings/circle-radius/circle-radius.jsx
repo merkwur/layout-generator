@@ -1,11 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Sliders from '../helpers/slider'
 import "./circle-radius.scss"
 
 const CircleRadius = ({getValues}) => {
+  const [inner, setInner] = useState(12)
+  const [outer, setOuter] = useState(12)
 
   const handleSliderValue = (value, which) => {
     getValues(value, "circle-radius", which)
+    console.log(value, which)
+    if (which === "inner") {
+      setInner(value)
+    } else {
+      setOuter(value)
+    }
   }
 
   return (
@@ -15,22 +23,39 @@ const CircleRadius = ({getValues}) => {
       </div>
       <div className='sliders'>
         <Sliders 
-          initial={0}
+          initial={12}
           orientation={"x"}
-          header={"inner-circle"}
+          header={"inner"}
           position={{left: 50, top: 0}}
           getValue={(value, which) => handleSliderValue(value, which)}
-          mnmx={{min: 0, max:100}}
+          mnmx={{min: 2, max:100}}
         />
+        <div 
+          className='screen'
+          style={{
+            position: "absolute", 
+            top: "10px", left: "20px"
+          }}
+          >
+          {inner}
+        </div>
         <Sliders 
-          initial={0}
+          initial={12}
           orientation={"x"}
-          header={"outer-circle"}
+          header={"outer"}
           position={{left: 50, top: 40}}
           getValue={(value, which) => handleSliderValue(value, which)}
-          mnmx={{min: 0, max:100}}
+          mnmx={{min: 2, max: 100}}
         />
-        
+        <div 
+          className='screen'
+          style={{
+            position: "absolute", 
+            top: "51px", left: "20px"
+          }}
+          >
+          {outer}
+        </div>
       </div>
     </div>
   )
