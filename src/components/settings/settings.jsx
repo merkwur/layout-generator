@@ -5,18 +5,28 @@ import PointOnPage from './point-on-page/pointOnPage'
 import CircleOnCircle from './circle-on-circle/circleOnCircle'
 import PageSize from './page-size/pageSize'
 import Grids from './grids/grids'
+import CircleRadius from './circle-radius/circle-radius'
 
 
-const Settings = () => {
-
-
+const Settings = ({settings, getValues}) => {
 
   return (
     <div className='settings-wrapper'>
-      <PointOnPage />
-      <CircleOnCircle />
-      <PageSize />
-      <Grids />
+      <PointOnPage 
+        getValues={getValues}
+      />
+      <CircleOnCircle
+        getValues={getValues}
+      />
+      <CircleRadius 
+        getValues={getValues}
+      />
+      <PageSize 
+        getValues={getValues}
+      />
+      <Grids 
+        getValues={getValues}
+      />
     </div>
   )
 }

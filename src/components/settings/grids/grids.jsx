@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import "./grids.scss"
 import GridHelpers from './grid-helpers/grid-helpers'
 
-const Grids = () => {
+const Grids = ({getValues}) => {
   const [hLineState, setHLineState] = useState("hide")
   const [hCLineState, setHCLineState] = useState("hide")
   const [vLineState, setVLineState] = useState("hide")
@@ -22,7 +22,7 @@ const Grids = () => {
   }
 
   const handleLineDegree = (degree, which) => {
-    console.log(degree, which)
+    getValues(degree, "line-angle", which)
   }
 
   return (

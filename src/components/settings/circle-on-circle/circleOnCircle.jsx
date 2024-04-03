@@ -5,7 +5,7 @@ import Sliders from '../helpers/slider'
 import { advance } from '@react-three/fiber'
 
 
-const CircleOnCircle = () => {
+const CircleOnCircle = ({getValues}) => {
   const [circleState, setCircleState] = useState("hide")
   const [containerDim, setContainerDim] = useState({x:0, y:0})
   const radialStickRef = useRef()
@@ -19,11 +19,13 @@ const CircleOnCircle = () => {
     }
   }
 
-  const handleSliderValues = (value, lie) => {
+  const handleSliderValues = (value, which) => {
     const current = radialStickRef.current
     const angle = -Math.PI * 2 / 100 * value
     current.style.left = `${50 + Math.cos(angle) * 50}px`
     current.style.top = `${50 + Math.sin(angle) * 50}px`
+
+    getValues(angle, "on-circle", which)
     
   }
 

@@ -2,22 +2,18 @@ import React, { useEffect, useState } from 'react'
 import "./pageSize.scss"
 import Sliders from '../helpers/slider'
 
-const PageSize = () => {
+const PageSize = ({getValues}) => {
   const [pageSizes, setPageSizes] = useState({x: 9, y: 11})
-  const [bs, setBs] = useState({x: 22.25, y: 27.25})
 
-
-  const handleSliderValues = (value, lie) => {
+  const handleSliderValues = (value, which) => {
     const fitted = value / 100 * 20
-    if (lie === "x") {
+    if (which === "x") {
       setPageSizes({...pageSizes, x: fitted})
     } else {
       setPageSizes({...pageSizes, y: fitted})
     }
-    
+    getValues(value, "page-size", which)
   }
-
-
 
   return (
     <>
@@ -33,13 +29,15 @@ adjustment`}
         <Sliders 
           initial={Math.floor(pageSizes.y * 5)}
           orientation={"y"} 
+          header={"y"}
           position={{left: 185, top: -5}} 
           mnmx={{min: 5, max:100}}
-          getValue={(value) => handleSliderValues(value)}/>
+          getValue={(value, which) => handleSliderValues(value, which)}/>
         <Sliders 
           initial={Math.floor(pageSizes.x * 5)}
           orientation={"x"} 
           position={{left: 69, top: 110}}
+          header={"x"}
           mnmx={{min: 5, max:100}}
           getValue={(value, lie) => handleSliderValues(value, lie)}/>
         <div 

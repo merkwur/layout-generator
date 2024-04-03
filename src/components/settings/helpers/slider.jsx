@@ -50,7 +50,7 @@ const Sliders = ({initial, orientation, header, position, getValue, mnmx}) => {
     } else {
       sliderRef.current.style.bottom = `${value}%`
     }
-    getValue(value, orientation)
+    getValue(value, header)
 
   }, [value])
 
