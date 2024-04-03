@@ -1,0 +1,59 @@
+.settings-wrapper{ 
+  width: 240px;
+  height: 100%;
+  background-color: #999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-right: 2px solid #17171777;
+  position: absolute;
+  z-index: 999;
+  
+  .header{
+    width: 100%;
+    padding-left: 1.2rem;
+    margin-top: 2rem;
+    font-size: 10pt;
+    font-weight: 700;
+    //border: 1px solid #ff4242;
+    color: #17171777;
+    .header-text{  
+      line-height: 8.8pt;
+      font-kerning: normal;
+      white-space: pre-wrap;
+
+    }
+  }
+
+
+  .center-settings{
+    font-size: 8pt;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    .circle-state{
+      margin-top: .2rem;
+    }
+
+    .center-circle-container{
+      position: relative;
+      margin-top: .5rem;
+      height: 110px;
+      width: 90px;
+      //border: 1px solid #17171777;   
+      background-size: 22.25px 27.25px;
+      background-image:
+        linear-gradient(to right, #ccc 1px, transparent 1px),
+        linear-gradient(to bottom, #ccc 1px, transparent 1px); 
+      .center-circle-controller{
+        position: absolute;
+        height: 14px;
+        width: 14px;
+        border-radius: 50%;
+        background-color: #171717aa;
+        transform: translate(-50%, -50%);
+        
+      }
+    }
+  }
+}

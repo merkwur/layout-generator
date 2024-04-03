@@ -1,0 +1,39 @@
+.angle-container{
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: .75rem;
+  // border: 1px solid #ff4242;
+  
+  .inner-wrapper{
+    display: flex;
+
+    .degree-box{
+      margin-top: .25rem;
+      width: 20px;
+      height: 20px;
+      border-radius: 5px;
+      border: 1px solid #17171777;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: #ccc;
+      font-size: 7.7pt;
+      cursor: pointer;
+    }
+    .indicators{
+      display: flex;
+      padding-left: .25rem;
+      font-size: 7pt;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      color: #171717aa;
+    }
+  }
+
+}

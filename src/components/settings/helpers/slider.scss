@@ -1,0 +1,26 @@
+.slider-container{
+  position: absolute;
+  width: fit-content;
+
+  .slider-header{
+    color: #ccc;
+    font-size: 8pt;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+  }
+  .slider-rail{
+    border: 1px solid #17171742;
+    position: relative;
+
+    .slider-thumb{
+      position: absolute;
+      height: 14px;
+      width: 14px;
+      border-radius: 50%;
+      background-color: #171717aa;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
