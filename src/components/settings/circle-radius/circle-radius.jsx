@@ -8,7 +8,6 @@ const CircleRadius = ({getValues}) => {
 
   const handleSliderValue = (value, which) => {
     getValues(value, "circle-radius", which)
-    console.log(value, which)
     if (which === "inner") {
       setInner(value)
     } else {

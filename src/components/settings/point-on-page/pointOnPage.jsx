@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { clamp } from '../../helpers'
 
 const PointOnPage = ({getValues}) => {
-
+  const [state, setState] = useState(true)
   const [circleState, setCircleState] = useState("hide")
   const stickRef = useRef()
   const [isDragging, setIsDragging] = useState(false)
@@ -17,10 +17,13 @@ const PointOnPage = ({getValues}) => {
     event.preventDefault()
     if (circleState === "show") {
       setCircleState("hide")
+      setState(false)
     } else {
       setCircleState("show")
+      setState(true)
     }
   }
+
 
   useEffect(() => {
     const container = document.getElementsByClassName("center-circle-container")[0]
@@ -29,7 +32,6 @@ const PointOnPage = ({getValues}) => {
       ...dragState,
       c: {xmin: left, xmax: right, ymin: top, ymax:bottom}
     })
-    console.log(left, top, right, bottom)
     
   }, [])
 
@@ -72,7 +74,7 @@ const PointOnPage = ({getValues}) => {
             ...dragState, 
             pointPos: {x: dragState.pointPos.x + diffX, y: dragState.pointPos.y + diffY}
           })
-          getValues({x: ((xPos / 90)-.5)*2, y: ((yPos / 110)-.5)*-2}, "on-page", undefined)
+          getValues({x: ((xPos / 90)-.5)*2, y: ((yPos / 110)-.5)*-2, state: state}, "on-page", undefined)
         }
       }
     }

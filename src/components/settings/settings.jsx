@@ -8,12 +8,13 @@ import Grids from './grids/grids'
 import CircleRadius from './circle-radius/circle-radius'
 
 
-const Settings = ({settings, getValues}) => {
+const Settings = ({getValues,}) => {
 
   return (
     <div className='settings-wrapper'>
       <PointOnPage 
         getValues={getValues}
+        
       />
       <CircleOnCircle
         getValues={getValues}

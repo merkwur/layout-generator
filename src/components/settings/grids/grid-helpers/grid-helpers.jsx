@@ -3,7 +3,7 @@ import "./grid-helpers.scss"
 
 const GridHelpers = ({which, getDegree}) => {
   const divRefs = useRef([])
-  const [selected, setSelected] = useState(0)
+  const [selected, setSelected] = useState(7)
   const angles = [90, 70, 60, 50, 45, 30, 20, 0]
 
 
