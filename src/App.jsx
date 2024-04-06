@@ -10,6 +10,7 @@ import { OrbitControls } from '@react-three/drei'
 
 import CircleMain from './components/circles/circle-main'
 import CirclePacks from './components/circles/circle-packs'
+import DearTester from './components/dear-tester/dear.tester'
 
 const App = () => {
 
@@ -57,7 +58,11 @@ const App = () => {
       <Settings 
         getValues={(values, from, which) => handleSettings(values, from, which)}
       />
-      <Canvas >
+      <DearTester />
+      <Canvas 
+        camera={{position: [0, 0, 12]}}
+      >
+        
         <Layout x={settings["page-size"].x} y={settings["page-size"].y} centers={partitionCenters}/>         
         <OrbitControls enableRotate={false}/>
         <Circles 

@@ -1,0 +1,55 @@
+.info-container{
+  padding-left: 2rem;
+  padding-right: 1rem;
+  padding-top: 1rem;
+  width: 600px;
+  height: 500px;
+  background-color: #aaa;
+  position: absolute;
+  left: 240px;
+  top: 0;
+  z-index: 999999;
+
+  .info-text{
+    font-size: 8.8pt;
+    color: #171717;
+    white-space: pre-wrap;
+    .email{
+      position: absolute;
+      left: 400px;
+      bottom: 17px ;
+
+      .say-copy{
+        color: #ccc;
+        width: fit-content;
+        border: 1px solid #ff4242;
+        position: absolute;
+        right: 0px;
+        top: -20px;
+        padding-left: .25rem;
+        padding-right: .25rem;
+        border-radius: 5px;
+        background-color: #ff4242;
+      }
+
+    }
+  }
+
+  .open-close{
+    color: #ccc;
+    background-color: #ff4242;
+    width: 60px;
+    height: 20px;
+    position: absolute;
+    right: 0;
+    bottom: -20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+    border-bottom-right-radius: 5px;
+    font-size: 8.8pt;
+    cursor: pointer;
+  }
+
+}

@@ -28,7 +28,6 @@
   .center-settings{
     font-size: 8pt;
     font-weight: 600;
-    cursor: pointer;
     position: relative;
     .circle-state{
       margin-top: .2rem;
@@ -47,6 +46,7 @@
       .center-circle-controller{
         position: absolute;
         height: 14px;
+        cursor: pointer;
         width: 14px;
         border-radius: 50%;
         background-color: #171717aa;
